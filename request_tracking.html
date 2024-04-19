@@ -1,0 +1,14 @@
+{% for request in requests %}
+    <div>
+        <p>Type of Request: {{ request.request_type }}</p>
+        <p>Description: {{ request.description }}</p>
+        <p>Status: {{ request.status }}</p>
+        <p>Submitted At: {{ request.submitted_at }}</p>
+        {% if request.status == 'Resolved' %}
+            <p>Resolved At: {{ request.resolved_at }}</p>
+        {% endif %}
+        {% if request.attachment %}
+            <p>Attachment: <a href="{{ request.attachment.url }}">{{ request.attachment.name }}</a></p>
+        {% endif %}
+    </div>
+{% endfor %}

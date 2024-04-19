@@ -1,0 +1,10 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="request_type">Type of Request:</label>
+    <input type="text" id="request_type" name="request_type"><br>
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description"></textarea><br>
+    <label for="attachment">Attachment:</label>
+    <input type="file" id="attachment" name="attachment"><br>
+    <input type="submit" value="Submit">
+</form>
